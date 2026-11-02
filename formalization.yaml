@@ -1,0 +1,414 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml v0.4, one file for the three registry entries of this repository: comparator.json (Challenge.lean),
+# comparator-main-ch0.json (ChallengeMainCh0.lean) and comparator-ch0.json (ChallengeCh0.lean).
+version: "v0.4"
+
+project:
+  name: "HironakaLean: Hironaka's resolution of singularities (1964), formalized as written"
+  description: >-
+    Heisuke Hironaka's 1964 papers 'Resolution of singularities of an algebraic variety over a field of characteristic zero I,II' were seminal achievements in the history of algebraic geometry. They had inestimable impact on a broad range of research areas in mathematics including geometry, topology, number theory, differential equations, and mathematical physics. The achievement was recognised by a Fields medal awarded to Hironaka in 1970. The papers constitute a veritable tour de force contained in 217 densely-packed pages. The algebraic and combinatorial complexity of the papers is daunting, especially towards the later portions, and have led to a significant level of persistent incomprehension even on the part of domain experts. Because more transparent proofs of the same result appeared in the 1990s, the question of understanding the original papers in detail has become somewhat forgotten. In this document, we have formalised Hironaka's paper in full (apart from the complex-analytic statements of Ch. 0 and Ch. I §4), compiled an erratum, and included complementary arguments for a few portions of the paper that had non-trivial gaps. In a separate publication, we will give some of the narrative background, the interesting story of the mathematical community's tortuous efforts to understand these great works.
+  authors:
+    - "Daattavya Aggarwal"
+    - "Minhyong Kim"
+    - "Oisin Kim"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "Daattavya Aggarwal"   # one or more of the authors
+
+classification:
+  arxiv: ["math.AG"]
+  msc2020: ["14E15", "14B05", "14E05", "13H05"]
+
+sources:
+  - title: "Resolution of Singularities of an Algebraic Variety Over a Field of Characteristic Zero: I"
+    authors:
+      - "Heisuke Hironaka"
+    id: "https://www.jstor.org/stable/1970486"
+    type: "article"
+    location: "Annals of Mathematics 79 (1), January 1964, pp. 109–203"
+    relationship: "formalizes"
+    note: >-
+      Chapters 0 and II, and the statements of Ch. I (proved in Ch. IV), are formalized along the printed argument, apart from the complex-analytic statements of Ch. 0 and Ch. I §4.
+    license: "All rights reserved (Annals of Mathematics); the paper is not redistributed, short quotations only"
+    author_endorsement: "n/a"
+  - title: "Resolution of Singularities of an Algebraic Variety Over a Field of Characteristic Zero: II"
+    authors:
+      - "Heisuke Hironaka"
+    id: "https://www.jstor.org/stable/1970547"
+    type: "article"
+    location: "Annals of Mathematics 79 (2), March 1964, pp. 205–326"
+    relationship: "formalizes"
+    note: >-
+      Chapters III and IV (the proof of the fundamental theorems) are formalized along the printed argument, with the three errors found repaired (see fidelity.divergences).
+    license: "All rights reserved (Annals of Mathematics); the paper is not redistributed, short quotations only"
+    author_endorsement: "n/a"
+  - title: "Commutative Algebra, Vol. II (Chapters VII and VIII)"
+    authors: ["Oscar Zariski", "Pierre Samuel"]
+    type: "book"
+    relationship: "background"
+  - title: "Local Rings"
+    authors: ["Masayoshi Nagata"]
+    type: "book"
+    relationship: "background"
+  - title: "Éléments de géométrie algébrique I, II"
+    authors: ["Alexander Grothendieck", "Jean Dieudonné"]
+    type: "book"
+    relationship: "background"
+  - title: "A Jacobian criterion of simple points"
+    authors: ["Masayoshi Nagata"]
+    type: "article"
+    location: "Illinois Journal of Mathematics 1 (1957), pp. 427–432"
+    relationship: "background"
+  - title: "On the structure and ideal theory of complete local rings"
+    authors: ["Irvin S. Cohen"]
+    type: "article"
+    location: "Transactions of the American Mathematical Society 59 (1946), pp. 54–106"
+    relationship: "background"
+  - title: "Modular fields I"
+    authors: ["Saunders MacLane"]
+    type: "article"
+    location: "Duke Mathematical Journal 5 (1939)"
+    relationship: "background"
+  - title: "Critères de platitude et de projectivité"
+    authors: ["Michel Raynaud", "Laurent Gruson"]
+    type: "article"
+    location: "Inventiones Mathematicae 13 (1971)"
+    relationship: "background"
+
+related_formalizations: []   # owners: confirm that no earlier formalization of Hironaka's theorem is known
+
+status:
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+  main_results:
+    - declaration: "Hironaka.allFundamentalTheorems_printedRange"
+      comparator_config: "comparator.json"
+      literature_dependencies: &HironakaCitedResults
+        - &IsHironakaBaseIsClosedSingularLocus
+          statement: >-
+            Property (iii) of the class 𝔅 (Hironaka I, p. 161): for S in 𝔅, “For every S-algebra of finite type A, the
+            singular locus of Spec(A) is closed (with reference to Zariski topology).”
+            (Hironaka.Cited.IsHironakaBaseIsClosedSingularLocus)
+          source: >-
+            Nagata, A Jacobian criterion of simple points; Nagata, Local Rings, §46, Ch. VII; Nagata, On the closedness of
+            singular loci, Publ. Math. IHES 2 (1959), Theorem 1 (Hironaka I, footnote 30, p. 161)
+        - &MonoidalTransformationExistsIsProper
+          statement: >-
+            The monoidal transformation of an algebraic scheme V with center a subscheme B exists: “The existence can be
+            proved by taking as V′ the projective scheme Proj(S(I)) over V” (Hironaka I, p. 166); and it is proper (“all
+            the morphisms fᵢ are proper”, Hironaka I, p. 174; Hironaka II, p. 278). Assumed for every scheme, with
+            properness when the scheme is locally noetherian. (Hironaka.Cited.MonoidalTransformationExistsIsProper)
+          source: >-
+            Éléments de géométrie algébrique II, §3 (Hironaka I, footnote 33, p. 166: “cf. §3, Ch. II, of Grothendieck,
+            [6]”)
+        - &CurveFiniteIntegralClosure
+          statement: >-
+            For a complete noetherian local domain S, “the derived normal ring of S in its field of quotients is an
+            S-module of finite type” (Hironaka II, p. 218). (Hironaka.Cited.CurveFiniteIntegralClosure)
+          source: >-
+            The theory of local rings: Nagata, Local Rings (Hironaka I, footnote 3, p. 116)
+        - &ExistsFlatIsLocalHomAdicCompletionOfFlat
+          statement: >-
+            A flat local homomorphism R → R′ of noetherian local rings induces a flat local homomorphism R̂ → R̂′ of the
+            completions, compatible with it. (Hironaka.Cited.ExistsFlatIsLocalHomAdicCompletionOfFlat)
+          source: >-
+            The theory of local rings: Zariski–Samuel, Commutative Algebra II, Ch. VII–VIII;
+            Nagata, Local Rings (Hironaka I, footnote 3, p. 116)
+        - &ExistsHilbertSamuelPoly
+          statement: >-
+            “If A is a noetherian local ring and m is the maximal ideal of A, then we have a polynomial H(p) with rational
+            coefficients such that for all sufficiently large integers p the value H(p) of the polynomial is equal to the
+            sum of ranks of the (A/m)-modules grⁱ_m(A) with 0 ≦ i ≦ p. The degree of the polynomial is equal to the Krull
+            dimension of A, say d, and the coefficient of the term of degree d of H(p) is of the form e(A)/d! where e(A)
+            is a positive integer.” (Hironaka I, p. 133) (Hironaka.Cited.ExistsHilbertSamuelPoly)
+          source: >-
+            Stated without proof or reference; The theory of local rings: Zariski–Samuel, Commutative Algebra II,
+            Ch. VII–VIII; Nagata, Local Rings (Hironaka I, footnote 3, p. 116)
+        - &ExistsResidueCompEqIdOfIsAdicCompleteOfRingCharEq
+          statement: >-
+            The part of Cohen's structure theorem used: a complete noetherian local ring with the same characteristic as
+            its residue field has a coefficient field. The paper uses it for complete regular local rings: “R is a formal power series ring over a field, by Cohen's structure theorem” (Hironaka II, p. 258; also pp. 269, 297).
+            (Hironaka.Cited.ExistsResidueCompEqIdOfIsAdicCompleteOfRingCharEq)
+          source: >-
+            Cohen, On the structure and ideal theory of complete local rings (“Cohen's structure theorem”, Hironaka II,
+            pp. 258, 297)
+        - &ExistsSurjectiveMvPowerSeriesOfIsAdicComplete
+          statement: >-
+            A complete noetherian local ring S whose residue field has characteristic zero “is a homomorphic image of a
+            formal power series ring over a field of characteristic zero” (Hironaka I, footnote 30, p. 161; footnote 37,
+            p. 175). (Hironaka.Cited.ExistsSurjectiveMvPowerSeriesOfIsAdicComplete)
+          source: >-
+            Cohen, On the structure and ideal theory of complete local rings; stated without reference in Hironaka I,
+            footnotes 30 and 37
+        - &ExistsSurjectiveOfIsRegularLocalRingOfIsAdicComplete
+          statement: >-
+            Every complete noetherian local ring O “is a quotient ring R/J of a complete regular local ring R by an ideal
+            J in R” (Hironaka I, p. 200). (Hironaka.Cited.ExistsSurjectiveOfIsRegularLocalRingOfIsAdicComplete)
+          source: >-
+            Cohen, On the structure and ideal theory of complete local rings (“By Cohen's structure theorem of a complete
+            local ring”, Hironaka I, p. 200)
+        - &FiniteIntegralClosureOfEssFiniteType
+          statement: >-
+            For a complete noetherian local ring S and a domain A essentially of finite type over S, the integral closure
+            of A in its field of quotients is a finite A-module. (Hironaka.Cited.FiniteIntegralClosureOfEssFiniteType)
+          source: >-
+            Nagata, Local Rings (Hironaka I, footnote 3, p. 116). The paper recalls the complete case: “this condition is
+            satisfied by every complete noetherian local ring without nilpotent elements” (Hironaka II, footnote 10,
+            p. 243); the case used on p. 305 of Hironaka II, for rings of monoidal transforms of Ŝ_t, is not stated in
+            the paper
+        - &IsClosedComplRegularLocusOfFiniteType
+          statement: >-
+            For Ā = A/N of finite type over the perfect residue field of R, “the singular locus of Spec(Ā) is a nowhere
+            dense closed subset” (Hironaka II, p. 260). Assumed in the form: for a perfect field k and every k-algebra of
+            finite type B, the singular locus of Spec B is closed. (Hironaka.Cited.IsClosedComplRegularLocusOfFiniteType)
+          source: >-
+            Zariski, The concept of a simple point of an abstract algebraic variety (1947) (Hironaka II, footnote 12,
+            p. 260: “cf. Zariski [29]”)
+        - &IsRegularLocalRingLocalizationIffRankJacobianEqHeight
+          statement: >-
+            The jacobian criterion (Hironaka I, footnote 30, p. 161: “the jacobian criterion for simplicity”), for a polynomial ring
+            T = k⟦t₁,…,t_n⟧[x₁,…,x_m] over a formal power series ring over a field k of characteristic zero: for prime
+            ideals 𝔭 ⊆ 𝔮 of T and generators f₁,…,f_r of 𝔭, the localization of T/𝔭 at 𝔮 is regular if and only if
+            rank(J(f₁,…,f_r) modulo 𝔮) = rank 𝔭. (Hironaka.Cited.IsRegularLocalRingLocalizationIffRankJacobianEqHeight)
+          source: >-
+            Nagata, A Jacobian criterion of simple points; Nagata, Local Rings, §46, Ch. VII (Hironaka I, footnote 30,
+            p. 161)
+        - &IsRegularLocalRingLocalizationOfIsRegularLocalRing
+          statement: >-
+            For a regular local ring R and a prime ideal P, R_P is regular: “a localization of a regular local ring by
+            any prime ideal is regular” (Hironaka II, footnote 9, p. 243).
+            (Hironaka.Cited.IsRegularLocalRingLocalizationOfIsRegularLocalRing)
+          source: >-
+            J.-P. Serre, Sur la dimension homologique des anneaux et des modules noethériens, Proc. Int. Symp.
+            Tokyo–Nikko 1955 (Hironaka II, footnote 9, p. 243)
+        - &IsRegularLocalRingOfFlatOfIsRegularLocalRing
+          statement: >-
+            If R → R′ is a flat local homomorphism of noetherian local rings and R′ is regular, then R is regular.
+            (Hironaka.Cited.IsRegularLocalRingOfFlatOfIsRegularLocalRing)
+          source: >-
+            The theory of local rings: Zariski–Samuel, Commutative Algebra II, Ch. VII–VIII;
+            Nagata, Local Rings (Hironaka I, footnote 3, p. 116)
+        - &IsSeparableFieldExtensionIff
+          statement: >-
+            “An extension of fields, k′ over k, is separable if and only if every k-subfield of finite type of k′ is
+            separably algebraic over a purely transcendental extension of k in k′” (Hironaka II, p. 223), separable in
+            the sense of pp. 211–212. (Hironaka.Cited.IsSeparableFieldExtensionIff)
+          source: >-
+            MacLane, Modular fields I, Duke Math. J. 5 (1939); Nagata, Local Rings, §39, Ch. IV (Hironaka II, footnote 4, p. 223)
+        - &RingKrullDimAdicCompletionQuotientEq
+          statement: >-
+            For a noetherian local ring R and an ideal Q, dim(R̂/QR̂) = dim(R/Q); used in “We can assume that
+            dim(R̂/Q̂) = dim(R/Q)” (Hironaka II, p. 261). (Hironaka.Cited.RingKrullDimAdicCompletionQuotientEq)
+          source: >-
+            The theory of local rings: Zariski–Samuel, Commutative Algebra II, Ch. VII–VIII;
+            Nagata, Local Rings (Hironaka I, footnote 3, p. 116)
+    - declaration: "Hironaka.MainTheorem.I_all"
+      comparator_config: "comparator.json"
+      literature_dependencies: *HironakaCitedResults
+    - declaration: "Hironaka.mainTheorem_II"
+      comparator_config: "comparator.json"
+      literature_dependencies: *HironakaCitedResults
+    - declaration: "Hironaka.MainTheorem.Ch0.I"
+      comparator_config: "comparator-main-ch0.json"
+      literature_dependencies: *HironakaCitedResults
+    - declaration: "Hironaka.MainTheorem.Ch0.I_weak"
+      comparator_config: "comparator-main-ch0.json"
+      literature_dependencies: *HironakaCitedResults
+    - declaration: "Hironaka.MainTheorem.Ch0.I_strong"
+      comparator_config: "comparator-main-ch0.json"
+      literature_dependencies: *HironakaCitedResults
+    - declaration: "Hironaka.MainTheorem.Ch0.I_strong_eq"
+      comparator_config: "comparator-main-ch0.json"
+      literature_dependencies: *HironakaCitedResults
+    - declaration: "Hironaka.MainTheorem.Ch0.exists_projective_model"
+      comparator_config: "comparator-main-ch0.json"
+      literature_dependencies: *HironakaCitedResults
+    - declaration: "Hironaka.MainTheorem.Ch0.IStar"
+      comparator_config: "comparator-main-ch0.json"
+      literature_dependencies: *HironakaCitedResults
+    - declaration: "Hironaka.MainTheorem.Ch0.II_full"
+      comparator_config: "comparator-main-ch0.json"
+      literature_dependencies: *HironakaCitedResults
+    - declaration: "Hironaka.MainTheorem.Ch0.B_star"
+      comparator_config: "comparator-main-ch0.json"
+      literature_dependencies: *HironakaCitedResults
+    - declaration: "Hironaka.MainTheorem.Ch0.exists_isTrivializing"
+      comparator_config: "comparator-main-ch0.json"
+      literature_dependencies: *HironakaCitedResults
+    - declaration: "Hironaka.MainTheorem.Ch0.exists_isBoundarySimplification"
+      comparator_config: "comparator-main-ch0.json"
+      literature_dependencies: *HironakaCitedResults
+    - declaration: "Hironaka.MainTheorem.Ch0.exists_isBoundarySimplification_of_singularLocus_subset_of_field"
+      comparator_config: "comparator-main-ch0.json"
+      literature_dependencies: *HironakaCitedResults
+    - declaration: "Hironaka.MainTheorem.Ch0.exists_isInvertible_subsheaf_pullback"
+      comparator_config: "comparator-ch0.json"
+      literature_dependencies: &HironakaCitedResultsCh0
+        - *IsHironakaBaseIsClosedSingularLocus
+        - *MonoidalTransformationExistsIsProper
+        - *CurveFiniteIntegralClosure
+        - *ExistsFlatIsLocalHomAdicCompletionOfFlat
+        - *ExistsHilbertSamuelPoly
+        - *ExistsResidueCompEqIdOfIsAdicCompleteOfRingCharEq
+        - *ExistsSurjectiveMvPowerSeriesOfIsAdicComplete
+        - *ExistsSurjectiveOfIsRegularLocalRingOfIsAdicComplete
+        - *FiniteIntegralClosureOfEssFiniteType
+        - *IsClosedComplRegularLocusOfFiniteType
+        - *IsRegularLocalRingLocalizationIffRankJacobianEqHeight
+        - *IsRegularLocalRingLocalizationOfIsRegularLocalRing
+        - *IsRegularLocalRingOfFlatOfIsRegularLocalRing
+        - *IsSeparableFieldExtensionIff
+        - *RingKrullDimAdicCompletionQuotientEq
+        - statement: >-
+            A regular local ring is a unique factorization domain. (Hironaka.Cited.IsRegularLocalRingUniqueFactorizationMonoid)
+          source: >-
+            Auslander–Buchsbaum, Unique factorization in regular local rings (1959). Not stated in the paper; used for
+            the equivalence of Definition 2 (Hironaka I, p. 141: “invertible (or, equivalently, E is everywhere of
+            codimension one on X …)”), within the theory of local rings (Hironaka I, footnote 3, p. 116)
+        - statement: >-
+            (*) “Let f be a rational application of a non-singular algebraic B-scheme X to another algebraic B-scheme Y.
+            We assume that f is proper. Then there exists a finite system of coherent sheaves of ideals ≠ (0), say J₁,
+            J₂, …, J_d, on X, such that: If h: X′ → X is any morphism of a non-singular algebraic B-scheme X′ to X, and if we can write J′ᵢPᵢ = h⁻¹(Jᵢ) for each i where Pᵢ is an invertible sheaf of ideals on X′ and J′ᵢ is a sheaf of ideals ≠ (0) on X′ which is not divisible by any invertible sheaf of ideals (except O_X′), then the domain of definition of the composition f∘h is exactly equal to the set of those points x of X′ at which
+            J′ᵢₓ = O_X′,x for at least one i.” (Hironaka I, p. 141)
+            (Hironaka.Cited.RationalApplicationExistsFiniteSystemDomainPrecompEq)
+          source: "Hironaka I, p. 141 (“we note the following fact”): stated without proof or reference; assumed, as in the paper"
+        - statement: >-
+            The single blow-up case of consequence (2), “the same result for a monoidal transformation of a non-singular
+            algebraic B-scheme with non-singular center” (Hironaka I, p. 145): for the monoidal transformation f: X′ → X of a non-singular algebraic B-scheme X with
+            non-singular center, nowhere dense in X, the direct images Rⁱf(O_X′) are zero for i > 0 and R⁰f(O_X′) is O_X.
+            (Hironaka.Cited.MonoidalTransformationHigherDirectImageStructureSheaf)
+          source: "Hironaka I, p. 145: stated without proof or reference; assumed, as in the paper"
+        - statement: >-
+            For (X₁, θ₁) ∈ 𝔐(L/B) with X₁ non-singular, there is (X₂, θ₂) ∈ 𝔐(L/B) “which dominates (X₁, θ₁) and of
+            which X₂ is projective. The existence of such (X₂, θ₂) is obvious.” (Hironaka I, p. 145)
+            (Hironaka.Cited.FunctionFieldPairExistsProjectiveDominating)
+          source: "Hironaka I, p. 145 (“obvious”): stated without proof or reference; assumed, as in the paper"
+        - statement: >-
+            If (X′₁, θ′₁) is obtained from (X₁, θ₁) ∈ 𝔐(L/B), X₁ non-singular, by a finite succession of monoidal
+            transformations with non-singular centers and dominates (X₂, θ₂), X₂ projective, which dominates (X₁, θ₁),
+            then X′₁ is projective: “the algebraic B-scheme X′₁ obtained in (1) is then necessarily projective”
+            (Hironaka I, p. 145). (Hironaka.Cited.FunctionFieldPairIsProjectiveOverOfIsObtainedByDominates)
+          source: "Hironaka I, p. 145: stated without proof or reference; assumed, as in the paper"
+    - declaration: "Hironaka.RationalApplication.question_E"
+      comparator_config: "comparator-ch0.json"
+      literature_dependencies: *HironakaCitedResultsCh0
+    - declaration: "Hironaka.FunctionFieldPair.exists_isObtainedBy_dominates"
+      comparator_config: "comparator-ch0.json"
+      literature_dependencies: *HironakaCitedResultsCh0
+    - declaration: "Hironaka.FunctionFieldPair.exists_higherDirectImage_structureSheaf"
+      comparator_config: "comparator-ch0.json"
+      literature_dependencies: *HironakaCitedResultsCh0
+    - declaration: "Hironaka.FunctionFieldPair.exists_isObtainedBy_nonsingular_projective"
+      comparator_config: "comparator-ch0.json"
+      literature_dependencies: *HironakaCitedResultsCh0
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["claude-opus-5-5", "claude-sonnet-5-5", "claude-fable-5-1"]   # owners: confirm the full list
+      framework: "Claude Code"
+      tool_setup: >-
+        Claude Code (CLI and VS Code extension) orchestrating parallel sub-agents, one per Lean file or proof step;
+        Lean 4 v4.35.0-rc3 with lake; LeanArchitect @[blueprint] annotations; scans and OCR of the paper for checking statements and quotations; a private record of every deviation, gap and error. Authors take responsibility for the fidelity of translation and the correctness of the Lean code.
+
+fidelity:
+  divergences: >-
+    There are three errors that we deem non-trivial. Each of these has been repaired, and the theorems are formalized with their original printed statements after incorporating the corrections. These are: (1) Lemma (AB.4) and condition [g],
+    Ch. IV §3, p. 299: the irreducibility of the center is false (explicit counterexample and discussion to appear in the erratum); herein the condition is imposed
+    componentwise and the argument goes through. (2) The subschemes Ẽ_j of the auxiliary datum (Ch. IV, pp. 298, 308, 315, 321) can be reducible,
+    and Ẽ_i = X̃ when F = E_i; they are split into connected components and Ẽ_j = X̃ is dropped. (3) J̄*(s) and
+    Remark 2 of Ch. IV §4 (pp. 322–323) fail in the closed case with F = E_i, a_i > 0, ν < b (example in 𝔸³); the
+    threshold b − ν is shifted by the weight of the dropped components. 
+    Aside from trivial issues such as typos, there are a few other deviations. For instance, there are cases where a statement is false only in a degenerate case but the original arguments are formalizable with an additional hypothesis. Lemma 18 and Theorem 6 of Ch. III are representative examples. Every deviation is recorded in the docstring of the declaration concerned. A complete compilation of all deviations, gaps and errors will be available in the erratum.
+
+review:
+  status: "a combination of agent-review and self-assessment"
+
+alignment:
+  namespace: "Hironaka"
+  statements:
+    - source: "Ch. I §2 (proved in Ch. IV): fundamental theorems I₁^{N,n}, I₂^{N,n}, II₁^N, II₂^N, for N > n ≧ −1"
+      lean: "Hironaka.allFundamentalTheorems_printedRange"
+      module: "Hironaka.Ch4.Conclusion"
+      status: "proved"
+      note: "The printed range (pp. 170–171); for n ≧ 0 also Hironaka.allFundamentalTheorems_fundamentalFamily. Hypotheses: HironakaCitedResults."
+    - source: "Ch. I §3, pp. 172–176: Main Theorem I(n)"
+      lean: "Hironaka.MainTheorem.I_all"
+      module: "Hironaka.Ch4.MainTheoremI"
+      status: "proved"
+      note: "Hypotheses: HironakaCitedResults."
+    - source: "Ch. I §3, pp. 176–177: Main Theorem II(N)"
+      lean: "Hironaka.mainTheorem_II"
+      module: "Hironaka.Ch4.MainTheoremII"
+      status: "proved"
+      note: "Hypotheses: HironakaCitedResults."
+    - source: "Ch. 0 §3, p. 132: Main Theorem I as printed (single center) and the weak form"
+      lean: "Hironaka.MainTheorem.Ch0.I"
+      module: "Hironaka.Ch4.MainTheoremIZeroCenter"
+      status: "proved"
+      note: "Also Hironaka.MainTheorem.Ch0.I_weak. Hypotheses: HironakaCitedResults."
+    - source: "Ch. 0 §3, pp. 132–133: Main Theorem I in the strong form, (a)–(c)"
+      lean: "Hironaka.MainTheorem.Ch0.I_strong"
+      module: "Hironaka.Ch4.MainTheoremIZero"
+      status: "proved"
+      note: >-
+        Also Hironaka.MainTheorem.Ch0.I_strong_eq (module Hironaka.Ch4.MainTheoremIZeroCenter). Hypotheses:
+        HironakaCitedResults.
+    - source: "Ch. 0 §3, p. 132: Corollary"
+      lean: "Hironaka.MainTheorem.Ch0.exists_projective_model"
+      module: "Hironaka.Ch4.ProjectiveModel"
+      status: "proved"
+      note: "Hypotheses: HironakaCitedResults."
+    - source: "Ch. 0 §4, p. 138: Main Theorem I*"
+      lean: "Hironaka.MainTheorem.Ch0.IStar"
+      module: "Hironaka.Ch4.MainTheoremIZero"
+      status: "proved"
+      note: "Hypotheses: HironakaCitedResults."
+    - source: "Ch. 0 §5, pp. 142–143: Main Theorem II and (B*)"
+      lean: "Hironaka.MainTheorem.Ch0.II_full"
+      module: "Hironaka.Ch4.MainTheoremIIZero"
+      status: "proved"
+      note: "Also Hironaka.MainTheorem.Ch0.B_star. Hypotheses: HironakaCitedResults."
+    - source: "Ch. 0 §5, pp. 143–144: Corollary 1 of Main Theorem II"
+      lean: "Hironaka.MainTheorem.Ch0.exists_isTrivializing"
+      module: "Hironaka.Ch4.MainTheoremIICorollaries"
+      status: "proved"
+      note: "Hypotheses: HironakaCitedResults."
+    - source: "Ch. 0 §5, pp. 145–146: Corollary 2 of Main Theorem II"
+      lean: "Hironaka.MainTheorem.Ch0.exists_isInvertible_subsheaf_pullback"
+      module: "Hironaka.Ch4.MainTheoremIICorollary2"
+      status: "proved"
+      note: >-
+        Adds F ≠ 0 (false for F = 0). Hypotheses: HironakaCitedResultsCh0.
+    - source: "Ch. 0 §5, p. 146: Corollary 3 of Main Theorem II"
+      lean: "Hironaka.MainTheorem.Ch0.exists_isBoundarySimplification"
+      module: "Hironaka.Ch4.MainTheoremIICorollary3"
+      status: "proved"
+      note: >-
+        Also the singular-locus form Hironaka.MainTheorem.Ch0.exists_isBoundarySimplification_of_singularLocus_subset_of_field.
+        Hypotheses: HironakaCitedResults.
+    - source: "Ch. 0 §5, pp. 140–143: Question (E)"
+      lean: "Hironaka.RationalApplication.question_E"
+      module: "Hironaka.Ch0.QuestionE"
+      status: "proved"
+      note: >-
+        Hypotheses: HironakaCitedResultsCh0.
+    - source: "Ch. 0 §5, p. 144: consequence (1) of Corollary 1"
+      lean: "Hironaka.FunctionFieldPair.exists_isObtainedBy_dominates"
+      module: "Hironaka.Ch4.MainTheoremIIConsequence1"
+      status: "proved"
+      note: "Hypotheses: HironakaCitedResultsCh0."
+    - source: "Ch. 0 §5, p. 145: consequence (2) of Corollary 1"
+      lean: "Hironaka.FunctionFieldPair.exists_higherDirectImage_structureSheaf"
+      module: "Hironaka.Ch4.MainTheoremIIConsequence2"
+      status: "proved"
+      note: >-
+        Hypotheses: HironakaCitedResultsCh0. The Leray edge maps of a composite, used tacitly, are proved. Adds the
+        properness of the pairs, natural in the context.
+    - source: "Ch. 0 §5, p. 145: consequence (3) of Corollary 1"
+      lean: "Hironaka.FunctionFieldPair.exists_isObtainedBy_nonsingular_projective"
+      module: "Hironaka.Ch4.MainTheoremIIConsequence3"
+      status: "proved"
+      note: >-
+        Hypotheses: HironakaCitedResultsCh0.

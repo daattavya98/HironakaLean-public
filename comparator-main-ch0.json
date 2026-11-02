@@ -1,0 +1,23 @@
+{
+  "challenge_module": "ChallengeMainCh0",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "Hironaka.MainTheorem.Ch0.I",
+    "Hironaka.MainTheorem.Ch0.I_weak",
+    "Hironaka.MainTheorem.Ch0.I_strong",
+    "Hironaka.MainTheorem.Ch0.I_strong_eq",
+    "Hironaka.MainTheorem.Ch0.exists_projective_model",
+    "Hironaka.MainTheorem.Ch0.IStar",
+    "Hironaka.MainTheorem.Ch0.II_full",
+    "Hironaka.MainTheorem.Ch0.B_star",
+    "Hironaka.MainTheorem.Ch0.exists_isTrivializing",
+    "Hironaka.MainTheorem.Ch0.exists_isBoundarySimplification",
+    "Hironaka.MainTheorem.Ch0.exists_isBoundarySimplification_of_singularLocus_subset_of_field"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

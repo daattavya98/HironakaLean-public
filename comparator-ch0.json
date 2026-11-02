@@ -1,0 +1,17 @@
+{
+  "challenge_module": "ChallengeCh0",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "Hironaka.MainTheorem.Ch0.exists_isInvertible_subsheaf_pullback",
+    "Hironaka.RationalApplication.question_E",
+    "Hironaka.FunctionFieldPair.exists_isObtainedBy_dominates",
+    "Hironaka.FunctionFieldPair.exists_higherDirectImage_structureSheaf",
+    "Hironaka.FunctionFieldPair.exists_isObtainedBy_nonsingular_projective"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

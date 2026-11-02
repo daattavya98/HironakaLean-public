@@ -1,0 +1,59 @@
+/* This file contains CSS tweaks for this blueprint.
+ * As an example, we included CSS rules that put
+ * a vertical line on the left of theorem statements
+ * and proofs.
+ * */
+
+div.theorem_thmcontent {
+	border-left: .15rem solid black;
+}
+
+div.proposition_thmcontent {
+	border-left: .15rem solid black;
+}
+
+div.lemma_thmcontent {
+	border-left: .1rem solid black;
+}
+
+div.corollary_thmcontent {
+	border-left: .1rem solid black;
+}
+
+div.proof_content {
+	border-left: .08rem solid grey;
+}
+
+/* Lean source snippets (blueprint/src/packages/leansource.py), shown in
+ * place of leanblueprint's default \lean{...} links, which point at
+ * Mathlib's docs and 404 for declarations that live in this repository. */
+div.lean_decl_name {
+	font-family: monospace;
+	font-weight: bold;
+	font-size: .85rem;
+	margin-top: .3rem;
+}
+
+pre.lean_source {
+	background-color: #f4f4f4;
+	border: 1px solid #cfcfcf;
+	border-radius: 3px;
+	padding: .4rem .6rem;
+	margin: .2rem 0 .6rem;
+	max-width: 60ch;
+	max-height: 20rem;
+	overflow: auto;
+	font-size: .85rem;
+	text-align: left;
+}
+
+span.lean_source_missing {
+	font-style: italic;
+	font-size: .85rem;
+}
+
+ul.tooltip_list.lean_source_list {
+	max-width: 70ch;
+	text-align: left;
+}
+

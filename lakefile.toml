@@ -1,0 +1,31 @@
+name = "hironaka"
+defaultTargets = ["Hironaka", "Challenge", "ChallengeMainCh0", "ChallengeCh0", "Solution"]
+
+[[lean_lib]]
+name = "Hironaka"
+
+[[lean_lib]]
+name = "Challenge"
+roots = ["Challenge"]
+
+[[lean_lib]]
+name = "ChallengeMainCh0"
+roots = ["ChallengeMainCh0"]
+
+[[lean_lib]]
+name = "ChallengeCh0"
+roots = ["ChallengeCh0"]
+
+[[lean_lib]]
+name = "Solution"
+roots = ["Solution"]
+
+[[require]]
+name = "LeanArchitect"
+git = "https://github.com/hanwenzhu/LeanArchitect.git"
+rev = "f28960a14da09bad9334cd293029d13c3f1a7854"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "e8a0dfd3631d6c84480d13514e68a7272e710ad2"

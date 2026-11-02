@@ -1,0 +1,16 @@
+/.lake
+/blueprint/web/
+/blueprint/print/
+/blueprint/lean_decls
+/blueprint/src/*.aux
+/blueprint/src/*.log
+/blueprint/src/*.fls
+/blueprint/src/*.fdb_latexmk
+/blueprint/src/*.out
+/blueprint/src/*.toc
+/blueprint/src/*.synctex.gz
+/blueprint/src/print.pdf
+__pycache__/
+.DS_Store
+/.venv/
+/blueprint/src/*.paux

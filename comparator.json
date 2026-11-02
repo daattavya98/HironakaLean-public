@@ -1,0 +1,15 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "Hironaka.allFundamentalTheorems_printedRange",
+    "Hironaka.MainTheorem.I_all",
+    "Hironaka.mainTheorem_II"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

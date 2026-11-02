@@ -1,0 +1,18 @@
+\documentclass{report}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{hyperref}
+\usepackage[showmore,dep_graph,coverage,project=../../]{blueprint}
+% Project-local package (blueprint/src/packages/leansource.py): shows each
+% node's actual Lean source instead of a \lean{...} link into Mathlib's
+% docs, which 404s for declarations that live in this repository. Must be
+% loaded after \usepackage{blueprint} above.
+\usepackage{leansource}
+\usepackage[capitalise,nameinlink]{cleveref}
+\input{macros/common}
+\input{macros/web}
+\title{Hironaka 1964 --- formalization blueprint}
+\begin{document}
+\maketitle
+\tableofcontents
+\input{content}
+\end{document}
