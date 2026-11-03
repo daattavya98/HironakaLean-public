@@ -323,7 +323,7 @@ fidelity:
     Aside from trivial issues such as typos, there are a few other deviations. For instance, there are cases where a statement is false only in a degenerate case but the original arguments are formalizable with an additional hypothesis. Lemma 18 and Theorem 6 of Ch. III are representative examples. Every deviation is recorded in the docstring of the declaration concerned. A complete compilation of all deviations, gaps and errors will be available in the erratum.
 
 review:
-  status: "a combination of agent-review and self-assessment"
+  status: "An agent-review of fidelity of formalization along the printed path of the paper. This was accompanied by a passing pre-submission, full comparator run with the --paranoid flag."
 
 alignment:
   namespace: "Hironaka"

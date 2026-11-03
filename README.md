@@ -94,7 +94,7 @@ lake comparator --config comparator-ch0.json
 ```
 on a linux machine.
 
-With the `--paranoid` flag, it also runs the other checkers bundled with Lean (`leanchecker-paranoid`, `lean4lean`, `nanoda`, `con-leche`, `con-ron`).
+With the `--paranoid` flag, it also runs the other checkers bundled with Lean (`leanchecker-paranoid`, `lean4lean`, `nanoda`, `con-leche`, `con-ron`). All three configurations pass the comparator check with the `--paranoid` flag in our local tests.
 
 
 ## Licence
