@@ -1,4 +1,4 @@
-# HironakaLean: Hironaka's resolution of singularities (1964), formalized as written
+#Hironaka's resolution of singularities
 
 This repository is a Lean 4 / Mathlib formalization of
 
