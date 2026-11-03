@@ -1,4 +1,4 @@
-#Hironaka's resolution of singularities
+# Resolution of Singularities of an Algebraic Variety Over a Field of Characteristic Zero
 
 This repository is a Lean 4 / Mathlib formalization of
 
