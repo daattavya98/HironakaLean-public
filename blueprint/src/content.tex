@@ -11,16 +11,14 @@
 
 This blueprint certifies Hironaka's 1964 proof \emph{as written}.  Every node is labelled
 by the paper's own numbering (\texttt{def:I.3-I} = Definition 3 (I) of Chapter I, etc.).
-Results that the paper cites without proof (Grothendieck's EGA, Nagata, Zariski--Samuel,
-Cohen) are leaves of the graph, marked as such in their proof text, and are never replaced
-by a different route.  Material that Hironaka defers to forthcoming papers (Ch.~0 \S1, \S6,
+Material that Hironaka defers to forthcoming papers (Ch.~0 \S1, \S6,
 \S7 on analytic spaces and schematization; Ch.~I \S4 ``details left to the reader'') is
 out of scope.
 
 Conventions of the formalization (see the module headers for details): subschemes are
 coherent sheaves of ideals; containment is reverse inclusion of ideal sheaves; dimensions
 are Krull dimensions in $\mathbb N\cup\{\infty\}\cup\{-\infty\}$; the fundamental theorems
-are indexed by $n\in\mathbb N$, the case $n=-1$ being vacuous.
+are indexed by $n\in\mathbb N$, the case $n=-1$ being stated separately.
 
 \chapter{Compatibility layer}
 
@@ -315,8 +313,7 @@ abstract family of propositions indexed like the fundamental theorems, the four 
 (A)--(D) of pp.~171--172 as properties of such a family, and the theorem that (A)--(D)
 together with the trivial base cases yield every $\mathrm I_1^{N,n}$, $\mathrm I_2^{N,n}$,
 $\mathrm{II}_1^N$, $\mathrm{II}_2^N$.  This is the one step of \S2 that Hironaka leaves to the
-reader (``this is easily done''), and it is the first node of this blueprint whose proof is
-complete in Lean.  The instances of (A)--(D) for the actual fundamental theorems, which are
+reader (``this is easily done'').  The instances of (A)--(D) for the actual fundamental theorems, which are
 the content of Chapters~II--IV, are stated in the next section.
 
 \inputleanmodule{Hironaka.Ch1.InductionScheme}
@@ -335,13 +332,7 @@ the content of Chapters~II--IV, are stated in the next section.
 
 \chapter{Chapter II: normal flatness along subschemes}
 
-The statements of this chapter are transcribed from pp.~180--203.  Two of the paper's
-constructions depend on a choice of a system of elements and are not formalized: the
-homomorphism $\psi$ of Proposition~1 (p.~183) and its relative $\psi'$ (p.~193), and the
-isomorphism $\lambda$ of p.~199.  Consequently Proposition~1~(1) is recorded only as the
-existence of an isomorphism of the homogeneous parts, condition~(ii) of Theorem~2 and of its
-Corollary~1 is omitted, and Lemmas~8 and~10 are omitted; each omission is flagged in the
-affected node.  Everything else is stated as in the paper; flatness of $\operatorname{gr}_P(O)$
+The statements of this chapter are transcribed from pp.~180--203.  Flatness of $\operatorname{gr}_P(O)$
 over $O/P$ is expressed through Definition~1 of Ch.~0 (freeness of the homogeneous parts,
 cf.\ p.~136).
 
@@ -802,7 +793,7 @@ scheme is projective (proved by comparing the charts of the blow-up with those o
 Rational applications and Question~(E), the elimination of points of indeterminacy (pp.~138--143): the composition of a
 rational application with a morphism with dense preimages, points of indeterminacy, proper rational applications (p.~139),
 the fact (*) of p.~141, which the paper uses without proof (a cited leaf), the two facts on ideals not divisible by an
-invertible ideal that the reduction uses tacitly (cited leaves), and the affirmative answer to (E) from Corollary~1.
+invertible ideal that the reduction uses tacitly (gaps filled), and the affirmative answer to (E) from Corollary~1.
 
 \inputleannode{def:0.5-preimage-dense}
 \inputleannode{def:0.5-rational-precomposition}

@@ -30,7 +30,7 @@ public import Mathlib.RingTheory.RingHom.Flat
 Main Theorem I in its four forms, the non-singular projective model, Main Theorem I*, Main Theorem II, (B*) and
 Corollaries 1 and 3 of Main Theorem II (the theorems of `comparator-main-ch0.json`), with `sorry` proofs, and every
 declaration their statements need, restated from `Hironaka.Statements` (whose docstrings are longer and quote the
-paper). The cited results are hypotheses: the class `HironakaCitedResults`.
+paper). The hypotheses are the class `HironakaCitedResults`.
 -/
 
 @[expose] public section

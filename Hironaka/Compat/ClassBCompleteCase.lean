@@ -31,7 +31,7 @@ condition (ii) for such an `R`:
   converse is `isRegularLocalRing_localization_quotient_completion_of_quotient`, the jacobian
   criterion in the completion, after identifying the local rings of `B` and of `B ⊗_R R̂` with
   `T₁_{Q₁}/K₁` and `Λ̂[y]_𝔔/K₁` (`exists_localRingEquivs`).
-* `hasCompletionRegularLocus_localization_atPrime_of_isAdicComplete'`: the statement of
+* `hasCompletionRegularLocus_localization_atPrime_of_complete`: the statement of
   `ClassBLocalization.lean`, from Cohen (footnote 30) and the presentation `A = T/K`.
 -/
 

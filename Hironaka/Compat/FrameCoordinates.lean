@@ -19,7 +19,7 @@ this module defines the restriction maps and the coordinates:
 * `Hironaka.Scheme.Modules.res`: the restriction `Γ(M, W) → Γ(M, V)` along `V ≤ W`, with its simp lemmas;
 * `Hironaka.Scheme.Modules.IsFrame.linearEquiv`, `IsFrame.coord`: for `V ≤ U` the coordinate map
   `Γ(M, V) → (ι → Γ(X, V))` is a linear isomorphism, inverse to `a ↦ ∑ aᵢ • cᵢ|_V`, compatible with restriction
-  (`IsFrame.coord_res`);
+  (`IsFrame.coord_sectionRes`);
 * `Hironaka.Scheme.Modules.eq_of_locally_eq`, `exists_section_of_compatible`: separation of the sheaf `M`
   and gluing of sections of `𝒪_X`.
 

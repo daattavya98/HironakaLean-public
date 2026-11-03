@@ -37,8 +37,8 @@ Ring-level content:
   prime `q` of `A ⊗_S Ŝ`: flatness of `S → Ŝ`, regularity of `(A⊗Ŝ)_q` and of the closed fibre
   (a localization of `(A/p) ⊗ Ŝ`) are condition (ii) of 𝔅 (`IsHironakaBase.completion_singularLocus`).
 
-Not done here (the scheme-level bridge): identification of
-`S'_s → Ŝ'_s` with `A_p → (A ⊗_S Ŝ)_q` from `X̂_s = X_s ×_X Spec Ŝ`.
+The scheme-level bridge, the identification of
+`S'_s → Ŝ'_s` with `A_p → (A ⊗_S Ŝ)_q` from `X̂_s = X_s ×_X Spec Ŝ`, is in `Hironaka/Compat/CompletionStalk.lean`.
 
 Deviation from the paper (gap filled): "This can be easily deduced from …" (p. 320) is proved:
 the dimension formula for flat local homomorphisms and the lifting of a regular system of parameters

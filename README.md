@@ -7,7 +7,7 @@ This repository is a Lean 4 / Mathlib formalization of
 
 It is accompanied by a Palomar submission:
 
-Our goal was to formalize Hironaka's orginal argument. This implies that each cited result (for instance results from local-ring theory) is stated in Lean and not proved: it is a hypothesis. We have made a detailed erratum which will be available along with a separate publication. While a majority amount to typos and trivial errors, we do also find a few non-trivial gaps that have been formalized with a corrected argument.
+Our goal was to formalize Hironaka's orginal argument. A majority of cited results (for instance results from local-ring theory) are stated in Lean and used as hypothesis for the main theorems. We have made a detailed erratum which will be available along with a separate publication. While a majority amount to typos and trivial errors, we do also find a few non-trivial gaps that have been formalized with a corrected argument.
 
 
 ## What is proved (modulo the cited results)
@@ -44,13 +44,6 @@ statement shows what it assumes; for example `theorem MainTheorem.I_all [Hironak
 The theorems of the table take `HironakaCitedResults`, except Corollary 2, Question (E) and the consequences (1)–(3), which
 take `HironakaCitedResultsCh0`.
 
-<!-- The library contains **4 `sorry`s**, and none of the theorems above depends on them:
-- the 2 statements that Remark 1 of Ch. III §9 makes without proof (its argument is formalized; no main theorem uses it);
-- the global containments asserted by the printed Lemma (AB.4) of Ch. IV §3, and its printed Corollary. They are kept as
-  the record of the paper's error described below. Whether these printed statements hold is open (no counterexample is
-  known).
-
-Each of the 4 is labelled in its docstring. -->
 
 ## Scope
 

@@ -22,7 +22,7 @@ ideals times one which is not divisible by any invertible sheaf of ideals" (used
 
 * `Hironaka.gcdIdeal I`: the intersection of the principal ideals containing `I`.  In a unique factorization domain, if
   `I = (a w₁, …, w_n a)` with the `wᵢ` without common non-unit divisor, then `gcdIdeal I = (a)`
-  (`gcdIdeal_eq_span_of_coprime`), and `I = (g wᵢ)` for some `g`, `wᵢ` always exists (`exists_gcd_decomposition`).
+  (`gcdIdeal_eq_span_of_coprime`).
 * `Hironaka.HeightGood w q`: no prime `Q ≤ q` of height at most one of the ring contains all the `wᵢ`.  For a localization
   `B` of `A` at `q` which is a unique factorization domain, it is equivalent to "the `wᵢ` have no common non-unit divisor
   in `B`" (`heightGood_iff_coprime`), and it is open: `exists_forall_heightGood`.

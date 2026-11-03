@@ -29,7 +29,7 @@ public import Mathlib.RingTheory.RingHom.Flat
 
 Corollary 2 of Main Theorem II, Question (E) and the consequences (1)–(3) of Corollary 1 (the theorems of
 `comparator-ch0.json`), with `sorry` proofs, and every declaration their statements need, restated from
-`Hironaka.Statements` (whose docstrings are longer and quote the paper). The cited results are hypotheses: the class
+`Hironaka.Statements` (whose docstrings are longer and quote the paper). The hypotheses are the class
 `HironakaCitedResultsCh0`.
 -/
 

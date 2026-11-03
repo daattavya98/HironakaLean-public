@@ -37,8 +37,7 @@ Both normalizations are changes of the coordinates `(y₁, …, y_b)` of
 * `AdaptedCoords.exists_tauNormalized` produces the `τ` independent combinations and the
   invertible matrix `C` over `S₀` ("we may assume that `(w, y₁, ⋯, y_τ)` is a regular system of
   `τ_{(z)}`-parameters");
-* `AdaptedCoords.exists_shift` and `AdaptedCoords.modelR_shift`, `AdaptedCoords.modelT_shift`
-  carry out "We may replace `y_j` by `y_j + v_j y`": the model of `gr_M(R)` is unchanged (the
+* `AdaptedCoords.exists_shift` carries out "We may replace `y_j` by `y_j + v_j y`": the model of `gr_M(R)` is unchanged (the
   initial form of `y_j + v_j y` is `Y_j`) and the model of `gr_{M₁}(R₁)` is composed with the
   substitution `Ȳ_j ↦ Ȳ_j + L_j` (the initial form of `ȳ_j + v_j` is `Ȳ_j + L_j`).
 -/

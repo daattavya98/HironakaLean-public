@@ -2098,8 +2098,6 @@ the instance `U_s = X̂'_s` (`Frame.isContainedIn_W_and_resolvedAt_extendBy_of_i
 see there).  The paper's argument applies with `lem:IV.AB-5-generic`, `lem:IV.AB-6-generic` in
 place of Lemmas (AB.5), (AB.6).
 
-Proved (its leaves are the cited leaves of the (AB.5) frames and the Corollary of (AB.3)).
-
 \textbf{Deviation from the paper (gap filled), normal crossings.} "the canonical homomorphism
 `S_s → Ŝ_s` transforms a regular system of parameters into such a system … Therefore, by the above
 property

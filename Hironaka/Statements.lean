@@ -1964,8 +1964,7 @@ class of the composites `g ∘ a`, `g` a representative of `f` (p. 139: "the cla
 and those in `g`", with the first factor the morphism `a`).
 
 Encoding: this is the composition of p. 139 for a first factor which is a morphism (the only case used: `h`, a
-monoidal transformation, p. 139, and the composites of such, p. 140); the composition of two rational applications is
-`RationalMap.compDense` (`Hironaka/Ch0/RationalApplication.lean`). -/
+monoidal transformation, p. 139, and the composites of such, p. 140). -/
 @[blueprint "def:0.5-rational-precomposition"
   (statement := /-- Let $f\colon X\dashrightarrow Y$ be a rational application and $a\colon X'\to X$ a morphism with
     dense preimages. The \emph{composition} $f\circ a$ is the rational application of $X'$ to $Y$ which is the class of
@@ -2313,7 +2312,8 @@ noncomputable def structureUnitR0 (f : X ⟶ Y) :
   f.structureUnit ≫ (Scheme.Modules.pushforward f).toRightDerivedZero.app X.structureModule
 
 end
-/-- The cited results used by Ch. 0 §5: those of `HironakaCitedResults` and five more. -/
+/-- The hypotheses used by Ch. 0 §5: those of `HironakaCitedResults`, the cited unique factorization of regular
+local rings, and the four statements that the paper uses without proof or citation. -/
 class HironakaCitedResultsCh0 : Prop extends
     Hironaka.HironakaCitedResults.{u},
     Hironaka.Cited.IsRegularLocalRingUniqueFactorizationMonoid.{u},

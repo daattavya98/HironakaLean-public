@@ -28,8 +28,8 @@ public import Mathlib.RingTheory.RingHom.Flat
 # Challenge: the fundamental theorems and the main theorems I(n), II(N) of Hironaka (1964)
 
 The theorems of `comparator.json`, with `sorry` proofs, and every declaration their statements need, restated from
-`Hironaka.Statements` (whose docstrings are longer and quote the paper). The results that the paper cites without proof
-are hypotheses: the class `HironakaCitedResults`, one field per cited result, each a parent class `Hironaka.Cited.*`
+`Hironaka.Statements` (whose docstrings are longer and quote the paper). The hypotheses are the class
+`HironakaCitedResults`, one field per cited result, each a parent class `Hironaka.Cited.*`
 stating it.
 -/
 

@@ -10,6 +10,7 @@ public import Hironaka
 /-!
 # Solution
 
-The library `Hironaka` proves the theorems stated in `Challenge` (listed in `comparator.json`), under the same names
+The library `Hironaka` proves the theorems stated in `Challenge`, `ChallengeMainCh0` and `ChallengeCh0` (listed in
+`comparator.json`, `comparator-main-ch0.json` and `comparator-ch0.json`), under the same names
 and with the same statements; `lake comparator` checks this, the axioms they use, and the proofs.
 -/

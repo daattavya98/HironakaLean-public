@@ -2491,8 +2491,7 @@ graded `K`-algebras, obtained as above, `ψ : gr⁰_{m̄}(gr_P(O)) ⊗_K gr_{m̄
 isomorphism."
 
 Here `ψ = α ⊗ β*` is the map of p. 183, given by its homogeneous components `psiPiece` (`psiDeg n`
-is the part of total degree `n`; the algebra structure is not recorded, as for the map `φ` of
-Lemma 2), where `y₁, …, y_s ∈ O` are the paper's `x₁, …, x_r ∈ 𝔪`: their classes in `Ō` generate
+is the part of total degree `n`), where `y₁, …, y_s ∈ O` are the paper's `x₁, …, x_r ∈ 𝔪`: their classes in `Ō` generate
 `m̄` and form a quasi-regular family (a part of a regular system of parameters of `Ō`, "since
 `K` and `Ō` are both regular, `(x̄₁, …, x̄_r)` can be extended to a regular system of
 parameters", footnote 39; every minimal base `ȳ` of `m̄` has this property).  The hypothesis
@@ -2555,7 +2554,8 @@ total degree `n`, there exists *some* `K`-linear isomorphism
 `⊕_{p+q=n} gr⁰_{m̄}(gr^p_P(O)) ⊗_K gr^q_{m̄}(Ō) ≃ gr^n_m(O)` of the homogeneous parts of degree
 `n` (it is what Corollary 2 uses); the statement about the specific map `ψ` (`psiDeg`, for every
 choice of the system) is `psiDeg_bijective_of_isNormallyFlatAlongIdeal` (node
-`prop:II.1-1-psi`), and the algebra structure is not recorded.
+`prop:II.1-1-psi`); `ψ` as one isomorphism of graded `K`-algebras is `psiAlgHom_bijective` (node
+`prop:II.1-1-algebra`).
 
 The proof is the printed one (pp. 184–185).  (1) is proved, for a system `ȳ` lifting a minimal
 base of `m̄` (a part of a regular system of parameters of `Ō`, footnote 39), by showing that `ψ`
@@ -2587,7 +2587,8 @@ Formalization note (encoding): `gr⁰_{m̄}(gr^p_P(O))` is
     $\bigoplus_{p+q=n}\operatorname{gr}^0_{\bar{\mathfrak m}}
     (\operatorname{gr}^p_P(O))\otimes_K\operatorname{gr}^q_{\bar{\mathfrak m}}(\bar O)\cong
     \operatorname{gr}^n_{\mathfrak m}(O)$. That the specific $\psi$ (for every choice of the
-    system) is an isomorphism is \cref{prop:II.1-1-psi}; the algebra structure is not recorded. -/)
+    system) is an isomorphism is \cref{prop:II.1-1-psi}, and as one isomorphism of graded
+    $K$-algebras \cref{prop:II.1-1-algebra}. -/)
   (proof := /-- (The paper's proof, pp.~184--185.) Let $F=(x_1,\dots,x_r)\subseteq\mathfrak m$
     be the chosen system, so that $\mathfrak m=P+F$ and $(P^p\otimes_O F^q)\to\mathfrak m^n$,
     $p+q=n$, is surjective. ``For every non-negative integer $q$'' there is a commutative

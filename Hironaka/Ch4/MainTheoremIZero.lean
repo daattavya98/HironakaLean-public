@@ -186,8 +186,8 @@ namespace MainTheorem.Ch0
 Formalization notes (encoding): the succession `{f_i : X_{i+1} → X_i}` is a `MonoidalSuccession X Y` with
 `Y = X_r = X̃`; the conditions (a), (b), (c) and the non-singularity of `X̃` are `MonoidalSuccession.IsStrongResolution`;
 "`X_i` is normally flat along `D_i`" is `IsNormallyFlatAlongAt' ⊥ D_i` (`X_i` is the subscheme `⊥` of itself).  The link
-"the morphism `f` is obtained by" with the single center `D` of Main Theorem I is the unproved "we can see" of p. 133
-and is not formalized here.
+"the morphism `f` is obtained by" with the single center `D` of Main Theorem I (the "we can see" of p. 133)
+is `I_strong_eq`.
 
 Deviation from the paper (gap filled): the paper announces this ("We can prove the main theorem I in the strong form as
 follows") and derives it nowhere; it is Main Theorem I(n) (`MainTheorem.I_all`) for `V₀ = X`, `β = 0`, `W = X` (reduced):

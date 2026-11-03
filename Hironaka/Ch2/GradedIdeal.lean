@@ -66,8 +66,7 @@ On p. 193 the paper chooses "a system of elements `(y₁, …, y_s)` in `R` such
 classes `(ȳ₁, …, ȳ_s)` of them in `Ō` form a minimal base of `Q̄'` (`s = dim Ō_{Q̄'}`)" and
 uses this choice to build the homomorphism of graded `O/Q̄`-algebras
   `ψ' : gr⁰_{Q̄}(gr_{P̄}(O)) ⊗_{O/Q̄} gr_{Q̄/P̄}(O/P̄) → gr_{Q̄}(O)`.
-`ψ'` depends on the choice of `(y₁, …, y_s)` and is not canonical; it is not a definition here,
-but `psiDeg` of `Hironaka/Ch2/Flatness.lean` (the map `ψ` of Proposition 1 of §1, for the local
+`ψ'` depends on the choice of `(y₁, …, y_s)` and is not canonical; `psiDeg` of `Hironaka/Ch2/Flatness.lean` (the map `ψ` of Proposition 1 of §1, for the local
 ring `O`, `P̄`, `Q̄` and the classes of the `y_j`, one total degree at a time) takes the system as
 an argument.  In the formalization:
 * **Lemma 8 (p. 194)** is `bijective_psiDeg_iff_hasInitialFormSystem`, proved by the printed
@@ -839,14 +838,13 @@ the equivalence (without the assumption) to the case in which `O` is complete, h
 homomorphic image of a formal power series ring over a discrete valuation ring of rank one (or,
 rank zero)."
 
-Deviation from the paper (statement modified): **condition (ii) is omitted from this statement**
-(see the module docstring): `ψ'` depends on the choice of `(y₁, …, y_s)`, so this statement is the
-equivalence `(i) ⟺ (iii) ⟺ (iv)`; with (ii) the theorem is `isNormallyFlatAlongIdeal_tfae_psiDeg`
-(Lemma 8 is `bijective_psiDeg_iff_hasInitialFormSystem`).  Footnote 42 is not formalized.
+This statement is the equivalence `(i) ⟺ (iii) ⟺ (iv)`, the form used later; with (ii) the theorem is
+`isNormallyFlatAlongIdeal_tfae_psiDeg` (see the module docstring; Lemma 8 is
+`bijective_psiDeg_iff_hasInitialFormSystem`).  Footnote 42 is not formalized.
 
 Proof (as in the paper, p. 195): "By Proposition 1 of § 1, (i) ⟹ (ii). By Lemma 8, (ii) ⟺ (iii).
 By corollary to Lemma 2 of § 1, (iv) ⟹ (i). Thus it suffices to prove that (ii) and (iii)
-together imply (iv)."  Since (ii) is omitted from this statement, it enters only as the
+together imply (iv)."  Since (ii) is not part of this statement, it enters only as the
 intermediate step, for a system `y` with `Q = P + (y)` and quasi-regular `ȳ_j` as on pp. 183 and
 193 (`exists_adapted_lift`): (i) ⟹ (ii) is Proposition 1 of §1
 (`psiDeg_bijective_of_isNormallyFlatAlongIdeal`, with `isNormallyFlatAlongIdeal_of_le` for the
@@ -919,10 +917,8 @@ Formalization notes (encoding).
     ring $R$ is only necessary for (iii). The equivalence among the other three conditions
     holds without this assumption. (cf. Proposition 1, \S1.)''
 
-    \textbf{Deviation from the paper (statement modified).} The homomorphism $\psi'$ of
-    p.~193 depends on the choice of a system $(y_1,\dots,y_s)$; condition (ii) is therefore
-    omitted from this statement, which is the equivalence of (i), (iii) and (iv), and is
-    restored in \cref{thm:II.2-2-psi}.
+    This node is the equivalence of (i), (iii) and (iv), the form used later; Theorem~2 with
+    condition (ii) is \cref{thm:II.2-2-psi}.
 
     \textbf{Not formalized.} Footnote~42 is not formalized.
 
@@ -969,7 +965,7 @@ Formalization notes (encoding).
     implies that $Q^p\operatorname{gr}^q_P(R)\cap\operatorname{gr}^q_P(J,R)=
     Q^p\operatorname{gr}^q_P(J,R)$, which is $\operatorname{Im}(\zeta')$.
 
-    \textbf{Proof in Lean.} Since (ii) is omitted from the statement, it enters only as the
+    \textbf{Proof in Lean.} Since (ii) is not part of the statement, it enters only as the
     intermediate step: a system $(y_j)$ with $Q=P+(y)$ and $\bar y_j$ part of a regular system of
     parameters of $R/P$ is chosen as on pp.~183 and~193, (i)$\Rightarrow$(ii) is
     \cref{prop:II.1-1-psi}, (ii)$\Leftrightarrow$(iii) is Lemma~8
@@ -1042,8 +1038,8 @@ for `1 ≤ j ≤ m`, and (2) the initial forms of the `f_j` in `gr_Q(R)` generat
 (iv) The canonical homomorphism of graded `O/Q̄`-algebras
 `φ : gr⁰_{Q̄}(gr_{P̄}(O)) ⊗_{O/Q̄} gr_{Q̄/P̄}(O/P̄) → gr_{Q̄}(gr_{P̄}(O))` is isomorphic."
 
-Deviation from the paper (statement modified): as in Theorem 2, condition (ii) is omitted from
-this statement (it is restored in `isNormallyFlatAlongIdeal_tfae_psiDeg_of_eq_maximalIdeal`).  Formalization note
+As in Theorem 2, this statement is the equivalence of (i), (iii) and (iv); with (ii) it is
+`isNormallyFlatAlongIdeal_tfae_psiDeg_of_eq_maximalIdeal`.  Formalization note
 (encoding): the encodings of (i), (iii), (iv) are those of `isNormallyFlatAlongIdeal_tfae`; "`Q` is the maximal ideal of
 `R`" is the hypothesis `Q = maximalIdeal R` (the assumptions `Q` prime and `R/Q` regular of
 Theorem 2 are then automatic but are kept, "the notation and assumptions being as in
@@ -1063,9 +1059,8 @@ Theorem 2"). -/
     \to\operatorname{gr}_{\bar Q}(\operatorname{gr}_{\bar P}(O))$ is isomorphic.
     (Corollary 1, pp.~196--197.)
 
-    \textbf{Deviation from the paper (statement modified).} As in \cref{thm:II.2-2}, condition
-    (ii) is omitted from this statement, which is the equivalence of (i), (iii) and (iv); it is
-    restored in \cref{cor:II.2-thm2-1-psi}. -/)
+    As in \cref{thm:II.2-2}, this node is the equivalence of (i), (iii) and (iv); Corollary~1
+    with condition (ii) is \cref{cor:II.2-thm2-1-psi}. -/)
   (proof := /-- The assertion follows \cref{thm:II.2-2} because every module is flat over a
     field: $O/\bar Q=R/Q$ is a field, so the flatness conditions in (iii) and (iv) of
     \cref{thm:II.2-2} hold automatically. -/)

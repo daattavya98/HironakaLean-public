@@ -54,7 +54,7 @@ the paper's condition (ii) (see `IsFaithfullyFlat`).  "gr_P(O) is flat over O/P"
 noetherian local ring `O` is `IsNormallyFlatAlongIdeal P` (Definition 1 of Ch. 0, p. 136, and
 Lemma 1 of §1), as in `Hironaka/Ch2/Flatness.lean`; for an `A`-module `M`, "gr_I(M) is flat
 over A/I" is `∀ n, Module.Flat (A ⧸ I) (GrModPiece I M n)` (a direct sum is flat iff each
-summand is; the graded module `gr_I(M)` itself is not built, cf. `def:II.1-canonical-phi`).
+summand is).
 The completion of a local ring `O` is `AdicCompletion (maximalIdeal O) O` and `O_Q` is
 `Localization.AtPrime Q`.
 
@@ -2206,7 +2206,7 @@ private theorem exists_isQuasiRegular_sumElim_of_span_eq_map {R : Type u} [CommR
 The paper builds `λ` as the composite of the canonical isomorphism
 `gr⁰_{Q'}(gr_P(R)) ⊗_{R/Q} gr_{Q/P}(R/P) → gr_Q(gr_P(R))` with an isomorphism
 `gr⁰_{Q'}(gr_P(R)) ⊗_{R/Q} gr_{Q/P}(R/P) → gr_Q(R)` sending the class of `ȳ_j` to that of `y_j`.
-We do not construct `λ`; we spell out its value on the initial form of an element `g ∈ R`.  With
+This predicate spells out the value of `λ` (`lambdaPiece`) on the initial form of an element `g ∈ R`.  With
 `ν = ν_P(g)`, `n = ν_{Q/P}(Φ)` (`Φ` the initial form of `g` in `gr_P(R)`, so that `Φ_*` is the
 initial form of `g` in `gr_Q(gr_P(R))`, `doubleInitialForm`), `Φ = Σ_{|m|=n} ȳ^m ⊗ [a_m]` with
 `a_m ∈ Pᵛ` (`g ≡ Σ y^m a_m mod Pᵛ⁺¹`) and `λ(Φ_*)` is the class of `Σ y^m a_m` in
@@ -3790,7 +3790,7 @@ The proof is the printed one:
 
 Formalization note (encoding): the graded objects `gr_Q(gr_P(R))`, `gr_Q(R)`, … are read degreewise
 (`gr^n_{Q/P}(gr^ν_P(R))` in double degree `(ν, n)`, `GrPiece Q N` in total degree `N`); `φ`, `ψ`, `λ`
-are maps of modules in each (total) degree, their multiplicativity is not recorded.  The diagram is
+are maps of modules in each (total) degree.  The diagram is
 formed in each double degree.
 
 Deviation from the paper (statement modified): `λ` depends on `(y₁, …, y_s)`; the lemma is stated
