@@ -799,6 +799,9 @@ theorem IStar [Hironaka.HironakaCitedResults.{u}] {B : Type u} [Field B] [CharZe
     [LocallyOfFiniteType p] [QuasiCompact p] :
     ∃ (Y : Scheme.{u}) (s : MonoidalSuccession X Y), s.IsMainIStar :=
   sorry
+/-- Main Theorem II (pp. 142–143), exactly as printed, with no hypothesis on `d`, the maximum of `ν(J_x)` over `X`
+(`hd`). Degenerate case: for `J = O_X`, `d = 0` and (iv) can only hold with `X_r` empty; the theorem then holds by
+blowing up the connected components of `X`. For `d ≥ 1` it is `Hironaka.MainTheorem.Ch0.II` of the library. -/
 theorem II_full [Hironaka.HironakaCitedResults.{u}] {B : Type u} [Field B] [CharZero B] {X : Scheme.{u}} (p : X ⟶ Spec (CommRingCat.of B))
     [LocallyOfFiniteType p] [QuasiCompact p] (hX : X.IsNonsingular) (J : Subscheme X)
     (hJ : ∀ x, J.stalkIdeal x ≠ ⊥) (d : ℕ)

@@ -28,7 +28,9 @@ sources:
     location: "Annals of Mathematics 79 (1), January 1964, pp. 109–203"
     relationship: "formalizes"
     note: >-
-      Chapters 0 and II, and the statements of Ch. I (proved in Ch. IV), are formalized along the printed argument, apart from the complex-analytic statements of Ch. 0 and Ch. I §4.
+      Part I contains Chapters 0 (pp. 117–159), I (pp. 160–179) and II (pp. 180–203); Part II contains Chapters III
+      and IV. Chapters 0 and II, and the statements of Ch. I (proved in Ch. IV, in Part II), are formalized along the
+      printed argument, apart from the complex-analytic statements of Ch. 0 and Ch. I §4.
     license: "All rights reserved (Annals of Mathematics); the paper is not redistributed, short quotations only"
     author_endorsement: "n/a"
   - title: "Resolution of Singularities of an Algebraic Variety Over a Field of Characteristic Zero: II"
@@ -39,7 +41,9 @@ sources:
     location: "Annals of Mathematics 79 (2), March 1964, pp. 205–326"
     relationship: "formalizes"
     note: >-
-      Chapters III and IV (the proof of the fundamental theorems) are formalized along the printed argument, with the three errors found repaired (see fidelity.divergences).
+      Part II contains Chapters III (pp. 205–273) and IV (pp. 274–326); Chapters 0, I and II are in Part I. Chapters
+      III and IV (the proof of the fundamental theorems) are formalized along the printed argument, with the three
+      errors found repaired (see fidelity.divergences).
     license: "All rights reserved (Annals of Mathematics); the paper is not redistributed, short quotations only"
     author_endorsement: "n/a"
   - title: "Commutative Algebra, Vol. II (Chapters VII and VIII)"
@@ -381,7 +385,9 @@ alignment:
       lean: "Hironaka.MainTheorem.Ch0.II_full"
       module: "Hironaka.Ch4.MainTheoremIIZero"
       status: "proved"
-      note: "Also Hironaka.MainTheorem.Ch0.B_star. Hypotheses: HironakaCitedResults."
+      note: "Exactly as printed, with no hypothesis on d. For J = O_X, d = 0 and (iv) can only hold with X_r empty; the
+        theorem then holds degenerately, by blowing up the connected components of X. For d ≥ 1 it is
+        Hironaka.MainTheorem.Ch0.II. Also Hironaka.MainTheorem.Ch0.B_star. Hypotheses: HironakaCitedResults."
     - source: "Ch. 0 §5, pp. 143–144: Corollary 1 of Main Theorem II"
       lean: "Hironaka.MainTheorem.Ch0.exists_isTrivializing"
       module: "Hironaka.Ch4.MainTheoremIICorollaries"
