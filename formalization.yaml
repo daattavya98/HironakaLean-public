@@ -75,7 +75,19 @@ sources:
     location: "Inventiones Mathematicae 13 (1971)"
     relationship: "background"
 
-related_formalizations: []   # owners: confirm that no earlier formalization of Hironaka's theorem is known
+# The entries below are the other Palomar entries of this same formalization: one paper, split over three Comparator configurations because of the 1,000-line limit on a Challenge.
+
+related_formalizations:
+  - id: "PALOMAR-2026-11-03-000021"
+    relationship: "other"
+    note: >-
+      Companion Palomar entry of this formalization (comparator.json, Challenge.lean): the fundamental theorems
+      I₁^{N,n}, I₂^{N,n}, II₁^N, II₂^N for N > n ≧ −1, Main Theorem I(n) and Main Theorem II(N) of Ch. I.
+  - id: "PALOMAR-2026-11-04-000004"
+    relationship: "other"
+    note: >-
+      Companion Palomar entry of this formalization (comparator-ch0.json, ChallengeCh0.lean): Corollary 2 of Main
+      Theorem II, Question (E) and the consequences (1)–(3) of Corollary 1 (Ch. 0 §5).
 
 status:
   sorry_count: 0
