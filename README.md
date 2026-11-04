@@ -5,7 +5,7 @@ This repository is a Lean 4 / Mathlib formalization of
 > H. Hironaka, *Resolution of singularities of an algebraic variety over a field of characteristic zero* I, II.
 > Annals of Mathematics 79 (1964), 109–203 and 205–326.
 
-It is accompanied by a Palomar submission:
+It is accompanied by a Palomar submission. Due to the size of the formalization and current limits of Palomar, it is split over the three entries: PALOMAR-2026-11-03-000021, PALOMAR-2026-11-04-000004 and PALOMAR-2026-11-04-000012.
 
 Our goal was to formalize Hironaka's orginal argument. A majority of cited results (for instance results from local-ring theory) are stated in Lean and used as hypothesis for the main theorems. We have made a detailed erratum which will be available along with a separate publication. While a majority amount to typos and trivial errors, we do also find a few non-trivial gaps that have been formalized with a corrected argument.
 
