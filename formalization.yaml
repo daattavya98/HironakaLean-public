@@ -6,7 +6,7 @@ version: "v0.4"
 project:
   name: "Resolution of Singularities of an Algebraic Variety Over a Field of Characteristic Zero"
   description: >-
-    Heisuke Hironaka's 1964 papers 'Resolution of singularities of an algebraic variety over a field of characteristic zero I,II' were seminal achievements in the history of algebraic geometry. They had inestimable impact on a broad range of research areas in mathematics including geometry, topology, number theory, differential equations, and mathematical physics. The achievement was recognised by a Fields medal awarded to Hironaka in 1970. The papers constitute a veritable tour de force contained in 217 densely-packed pages. The algebraic and combinatorial complexity of the papers is daunting, especially towards the later portions, and have led to a significant level of persistent incomprehension even on the part of domain experts. Because more transparent proofs of the same result appeared in the 1990s, the question of understanding the original papers in detail has become somewhat forgotten. In the associated repository, we have formalised Hironaka's argument in full, modulo results he cites. We have also compiled an erratum, and included complementary arguments for a few portions of the paper that had non-trivial gaps. In a separate publication, we will give some of the narrative background, the interesting story of the mathematical community's tortuous efforts to understand these great works. The size of the formalization has forced us to split this work over three Palomar entries, one for each comparator configuration. The related entries can be found at PALOMAR-2026-11-03-000021 and PALOMAR-2026-11-04-000004 respectively.
+    Heisuke Hironaka's 1964 papers 'Resolution of singularities of an algebraic variety over a field of characteristic zero I,II' were seminal achievements in the history of algebraic geometry. They had inestimable impact on a broad range of research areas in mathematics including geometry, topology, number theory, differential equations, and mathematical physics. The achievement was recognised by a Fields medal awarded to Hironaka in 1970. The papers constitute a veritable tour de force contained in 217 densely-packed pages. The algebraic and combinatorial complexity of the papers is daunting, especially towards the later portions, and have led to a significant level of persistent incomprehension even on the part of domain experts. Because more transparent proofs of the same result appeared in the 1990s, the question of understanding the original papers in detail has become somewhat forgotten. In the associated repository, we have formalised Hironaka's argument in full, modulo results he cites. We have also compiled an erratum, and included complementary arguments for a few portions of the paper that had non-trivial gaps. In a separate publication, we will give some of the narrative background, the interesting story of the mathematical community's tortuous efforts to understand these great works. The size of the formalization has forced us to split this work over three Palomar entries, one for each comparator configuration. The related entries can be found at PALOMAR-2026-11-04-000004 and PALOMAR-2026-11-04-000012 respectively.
   authors:
     - "Daattavya Aggarwal"
     - "Minhyong Kim"
@@ -82,16 +82,18 @@ sources:
 # The entries below are the other Palomar entries of this same formalization: one paper, split over three Comparator configurations because of the 1,000-line limit on a Challenge.
 
 related_formalizations:
-  - id: "PALOMAR-2026-11-03-000021"
-    relationship: "other"
-    note: >-
-      Companion Palomar entry of this formalization (comparator.json, Challenge.lean): the fundamental theorems
-      I₁^{N,n}, I₂^{N,n}, II₁^N, II₂^N for N > n ≧ −1, Main Theorem I(n) and Main Theorem II(N) of Ch. I.
   - id: "PALOMAR-2026-11-04-000004"
     relationship: "other"
     note: >-
       Companion Palomar entry of this formalization (comparator-ch0.json, ChallengeCh0.lean): Corollary 2 of Main
       Theorem II, Question (E) and the consequences (1)–(3) of Corollary 1 (Ch. 0 §5).
+  - id: "PALOMAR-2026-11-04-000012"
+    relationship: "other"
+    note: >-
+      Companion Palomar entry of this formalization (comparator-main-ch0.json, ChallengeMainCh0.lean): Main Theorem I
+      as printed, in the weak and strong forms, and its Corollary (Ch. 0 §3); Main Theorem I* (§4); Main Theorem II and
+      (B*), and Corollaries 1 and 3 of Main Theorem II (§5).
+  
 
 status:
   sorry_count: 0
