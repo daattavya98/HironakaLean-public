@@ -7,7 +7,7 @@ This repository is a Lean 4 / Mathlib formalization of
 
 It is accompanied by a Palomar submission. Due to the size of the formalization and current limits of Palomar, it is split over the three entries: PALOMAR-2026-11-03-000021, PALOMAR-2026-11-04-000004 and PALOMAR-2026-11-04-000012.
 
-Our goal was to formalize Hironaka's orginal argument. A majority of cited results (for instance results from local-ring theory) are stated in Lean and used as hypothesis for the main theorems. We have made a detailed erratum which will be available along with a separate publication. While a majority amount to typos and trivial errors, we do also find a few non-trivial gaps that have been formalized with a corrected argument.
+Our goal was to formalize Hironaka's orginal argument. All the algebraic parts of the paper are formalized (see Scope). A majority of cited results (for instance results from local-ring theory) are stated in Lean and used as hypothesis for the main theorems. We have made a detailed erratum which will be available along with a separate publication. While a majority amount to typos and trivial errors, we do also find a few non-trivial gaps that have been formalized with a corrected argument.
 
 
 ## What is proved (modulo the cited results)
@@ -50,10 +50,7 @@ take `HironakaCitedResultsCh0`.
 Not formalized:
 - the analytic statements of Ch. 0 (analytic spaces and covers, §7, and the complex-analytic sentence of p. 132).
 
-Stated, not proved: the statements that the paper cites, states without proof or leaves to the reader in the algebraic
-parts of Ch. 0 §§1–2, 4, 6 and Ch. I §4 (for example Theorem III^N and Main Theorem III(N, n)) are stated as
-propositions. The deductions that the paper prints between them are proved, with those statements as explicit
-hypotheses (for example assertions (a) and (b) of Ch. 0 §2, p. 124).
+Theorem III^N and Main Theorem III(N, n) of Ch. I §4, which the paper leaves to the reader, are stated but not proved.
 
 ## Building
 
