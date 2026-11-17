@@ -30,7 +30,8 @@ sources:
     note: >-
       Part I contains Chapters 0 (pp. 117–159), I (pp. 160–179) and II (pp. 180–203); Part II contains Chapters III
       and IV. Chapters 0 and II, and the statements of Ch. I (proved in Ch. IV, in Part II), are formalized along the
-      printed argument, apart from the complex-analytic statements of Ch. 0 and Ch. I §4.
+      printed argument, apart from the complex-analytic material of Ch. 0 (analytic spaces and covers, §7). The
+      statements that the paper cites, states without proof or leaves to the reader are assumed and not proved.
     license: "All rights reserved (Annals of Mathematics); the paper is not redistributed, short quotations only"
     author_endorsement: "n/a"
   - title: "Resolution of Singularities of an Algebraic Variety Over a Field of Characteristic Zero: II"
@@ -338,7 +339,7 @@ fidelity:
     and Ẽ_i = X̃ when F = E_i; they are split into connected components and Ẽ_j = X̃ is dropped. (3) J̄*(s) and
     Remark 2 of Ch. IV §4 (pp. 322–323) fail in the closed case with F = E_i, a_i > 0, ν < b (example in 𝔸³); the
     threshold b − ν is shifted by the weight of the dropped components. 
-    Aside from trivial issues such as typos, there are a few other deviations. For instance, there are cases where a statement is false only in a degenerate case but the original arguments are formalizable with an additional hypothesis. Lemma 18 and Theorem 6 of Ch. III are representative examples. Every deviation is recorded in the docstring of the declaration concerned. A complete compilation of all deviations, gaps and errors will be available in the erratum.
+    Aside from trivial issues such as typos, there are a few other deviations. For instance, there are cases where a statement is false only in a degenerate case but the original arguments are formalizable with an additional hypothesis. Lemma 18 and Theorem 6 of Ch. III are representative examples. Every deviation is recorded in the docstring of the declaration concerned. A complete compilation of all deviations, gaps and errors will be available in the errata.
 
 review:
   status: "An agent-review of fidelity of formalization along the printed path of the paper. This was accompanied by a passing pre-submission, full comparator run with the --paranoid flag."
@@ -432,3 +433,86 @@ alignment:
       status: "proved"
       note: >-
         Hypotheses: HironakaCitedResultsCh0.
+    - source: "Ch. 0 §2, pp. 123–124: the existence theorem of blowing-up for 𝓜(ℛ/S), and 𝓜(ℛ/S) closed under blowing-up in 𝓜(ℛ)"
+      lean: "Hironaka.existenceOfBlowingUpOver_of_basic"
+      module: "Hironaka.Ch0.BlowingUpDeductions"
+      status: "proved"
+      note: >-
+        Also Hironaka.modulesOverClosedUnderBlowingUp_of_basic. Hypothesis: the basic existence theorem
+        (Hironaka.BasicExistenceOfBlowingUp, p. 123), itself proved from the construction of pp. 124–125 (next row).
+    - source: "Ch. 0 §2, p. 125: the basic existence theorem of blowing-up (“can be thus proved”)"
+      lean: "Hironaka.basicExistenceOfBlowingUp_of_construction"
+      module: "Hironaka.Ch0.BlowingUpConstruction"
+      status: "proved"
+      note: >-
+        Hypotheses, as explicit arguments: the two claims of the construction of pp. 124–125, stated without proof
+        (Hironaka.Construction.ConstructionIsRModule, Hironaka.Construction.ConstructionIsBlowingUp).
+    - source: "Ch. 0 §2, pp. 124–125: assertions (a) and (b) (quasi-coherent, resp. coherent algebraic, modules are closed under blowing-up)"
+      lean: "Hironaka.quasicoherentClosedUnderBlowingUp_of_construction"
+      module: "Hironaka.Ch0.BlowingUpClosed"
+      status: "proved"
+      note: >-
+        Also Hironaka.coherentClosedUnderBlowingUp_of_construction for (b). Along the printed derivation of p. 125;
+        hypotheses, as explicit arguments: the two claims of the construction, Grothendieck's observation
+        (Hironaka.GrothendieckObservation, cited, p. 124) and the uniqueness of blowing-ups (Hironaka.BlowingUpUnique,
+        p. 123). The steps that the paper does not print are proved.
+    - source: "Ch. 0 §2, p. 124: the existence theorem of blowing-up in 𝓜*(𝔄l/B) (“by the assertion (b)”)"
+      lean: "Hironaka.existenceOfBlowingUpCoherent_of_closed"
+      module: "Hironaka.Ch0.BlowingUpDeductions"
+      status: "proved"
+      note: "Hypothesis: assertion (b) (Hironaka.CoherentClosedUnderBlowingUp), proved in the row above."
+    - source: "Ch. 0 §2, p. 127: the existence of blowing-up in 𝒥(ℛ/S) from that in 𝓜(ℛ/S)"
+      lean: "Hironaka.idealExistenceFromModules_of_annihilator"
+      module: "Hironaka.Ch0.BlowingUpIdeals"
+      status: "proved"
+      note: >-
+        Along the printed construction (the annihilators of the powers of the ideal). Hypothesis, as an explicit
+        argument: its claim “It can be easily seen …” (Hironaka.AnnihilatorConstructionIsBlowingUp), stated without proof.
+    - source: "Ch. 0 §2, p. 128: the existence theorem of blowing-up in 𝒥*(𝔄l/B)"
+      lean: "Hironaka.existenceOfBlowingUpCoherentIdeals_of_annihilator"
+      module: "Hironaka.Ch0.BlowingUpIdealsCoherent"
+      status: "proved"
+      note: >-
+        Hypotheses, as explicit arguments: assertion (b), the claim of p. 127, and the next sentence of p. 128
+        (Hironaka.CoherentIdealsClosedInIdeals, stated without proof), which supplies the step the deduction does not print.
+    - source: "Ch. I §4, p. 178: dim(R) ≦ τ + dim(R/J)"
+      lean: "Hironaka.dimLeTauAddDimQuotient_of_dimAssocGradedQuotient"
+      module: "Hironaka.Ch1.CommentsProofs"
+      status: "proved"
+      note: >-
+        Hypothesis, as an explicit argument: the fact that the paper calls well-known, dim gr_M(R/J) = dim(R/J)
+        (Hironaka.DimAssocGradedQuotient).
+    - source: "Ch. I §4, p. 180, footnote 38: “hence, by (a), B_{r−1} = W_{r−1}”"
+      lean: "Hironaka.MonoidalSuccession.lastStep_eq_of_isMainIIISteps"
+      module: "Hironaka.Ch1.CommentsProofs"
+      status: "proved"
+    - source: "Ch. I §4, pp. 177–180: Theorem III^N and Main Theorem III(N, n)"
+      lean: "Hironaka.FundamentalTheorem.III"
+      module: "Hironaka.Ch1.Comments"
+      status: "stated"
+      note: >-
+        Also Hironaka.MainTheorem.III and the implications (A′), (B′). Left to the reader by the paper; stated as
+        propositions, not proved.
+    - source: "Ch. 0 §4, pp. 133–138: facts (A)–(C), Questions (D) and (D*), the theorem of B. Levi–Zariski"
+      lean: "Hironaka.EquimultiplicityQuestions.QuestionD"
+      module: "Hironaka.Ch0.EquimultiplicityQuestions"
+      status: "stated"
+      note: >-
+        Also Hironaka.EquimultiplicityQuestions.QuestionDStar and Hironaka.EquimultiplicityQuestions.LeviZariski
+        (cited). Algebraic case; stated, cited or deferred by the paper; propositions, not proved.
+    - source: "Ch. 0 §6, pp. 146–150: the Zariski space, local uniformization, (LU), (RS), Questions (F) and (F′)"
+      lean: "Hironaka.ExistsZariskiSpace"
+      module: "Hironaka.Ch0.ZariskiSpace"
+      status: "stated"
+      note: >-
+        Also Hironaka.LocalUniformization (cited), Hironaka.LU, Hironaka.RS, Hironaka.QuestionF. Algebraic case;
+        propositions, not proved. Hironaka.ZariskiFunctorial (p. 147) is false as printed and kept as a record;
+        Hironaka.ZariskiFunctorialDominant is the corrected statement.
+    - source: "Ch. 0 §§1–3, pp. 117–131: generalities, the remaining claims on blowing-up of modules and ideals, algebraic varieties"
+      lean: "Hironaka.GrothendieckObservation"
+      module: "Hironaka.Ch0.BlowingUpProj"
+      status: "stated"
+      note: >-
+        Grothendieck's observation (cited, p. 124) and the other claims of these pages are propositions, not proved.
+        Hironaka.SpecSectionsAsPrinted (p. 117) and Hironaka.AlgebraicVariety.SchemeDeterminedByVariety (p. 131) are
+        false as literally read and kept as records.

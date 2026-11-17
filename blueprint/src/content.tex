@@ -11,9 +11,13 @@
 
 This blueprint certifies Hironaka's 1964 proof \emph{as written}.  Every node is labelled
 by the paper's own numbering (\texttt{def:I.3-I} = Definition 3 (I) of Chapter I, etc.).
-Material that Hironaka defers to forthcoming papers (Ch.~0 \S1, \S6,
-\S7 on analytic spaces and schematization; Ch.~I \S4 ``details left to the reader'') is
-out of scope.
+Statements that the paper cites, defers to forthcoming papers, states without proof or leaves
+to the reader are formalized as statements (definitions of type \texttt{Prop}) and not
+proved: this covers Ch.~0 \S\S1--2 (algebraic part), the remaining parts of \S4, \S6
+(algebraic case) and Ch.~I \S4.  The deductions that the paper prints between these statements are
+proved, with the statements they use as explicit hypotheses (for example assertions (a) and (b) of
+Ch.~0 \S2, p.~124).  The analytic material (analytic spaces in Ch.~0 \S\S1--2
+and the analytic cases of \S\S3--6, and all of \S7) is out of scope.
 
 Conventions of the formalization (see the module headers for details): subschemes are
 coherent sheaves of ideals; containment is reverse inclusion of ideal sheaves; dimensions
@@ -194,6 +198,9 @@ given by their universal property, this is proved here from that property.
 The codimension of Ch.~I, p.~163, as printed: the least $\dim_x(V)$ over the points $x$ of $W$.
 \inputleanmodule{Hironaka.Compat.CodimDefinition}
 
+\section{Generalities on schemes (Ch.~0 \S1, algebraic part)}
+\inputleanmodule{Hironaka.Ch0.Generalities}
+
 \section{Invertible ideals and codimension one (Ch.~0 \S5, Definition~2)}
 Definition~2 (p.~141) asserts, without proof or citation, that for a reduced subscheme $E$ of a
 non-singular algebraic scheme the sheaf of ideals of $E$ is invertible ``or, equivalently,'' $E$ is
@@ -217,6 +224,31 @@ Introduction (p.~116).
 \inputleannode{lem:strict-transform-is-blowup-unique}
 \inputleannode{def:succession}
 \inputleannode{lem:succession-proper}
+
+\section{Blowing-up of modules and ideals; the first definition of projective (Ch.~0 \S2)}
+\inputleanmodule{Hironaka.Compat.RestrictSubset}
+\inputleanmodule{Hironaka.Ch0.BlowingUpModules}
+\inputleanmodule{Hironaka.Ch0.BlowingUpDeductions}
+\inputleanmodule{Hironaka.Ch0.BlowingUpIdeals}
+\inputleanmodule{Hironaka.Ch0.BlowingUpIdealsCoherent}
+\inputleanmodule{Hironaka.Compat.SymmetricAlgebraGrading}
+\inputleanmodule{Hironaka.Compat.ReesAlgebraGrading}
+\inputleanmodule{Hironaka.Compat.ProjDegreeOne}
+\inputleanmodule{Hironaka.Ch0.BlowingUpProj}
+\inputleanmodule{Hironaka.Compat.StalkSymmetricAlgebra}
+\inputleanmodule{Hironaka.Compat.RestrictedSections}
+\inputleanmodule{Hironaka.Ch0.BlowingUpConstruction}
+\inputleanmodule{Hironaka.Compat.OModulesRestrict}
+\inputleanmodule{Hironaka.Compat.RModuleRestrict}
+\inputleanmodule{Hironaka.Compat.InvertibleModules}
+\inputleanmodule{Hironaka.Compat.ProjStructureMorphism}
+\inputleanmodule{Hironaka.Compat.AffineCharts}
+\inputleanmodule{Hironaka.Ch0.BlowingUpLocality}
+\inputleanmodule{Hironaka.Ch0.BlowingUpCharts}
+\inputleanmodule{Hironaka.Ch0.BlowingUpClosed}
+
+\section{Algebraic varieties and algebraic schemes (Ch.~0 \S3, pp.~130--131)}
+\inputleanmodule{Hironaka.Ch0.AlgebraicVarieties}
 
 \section{Local structure of a monoidal transformation (Ch.~0 \S5)}
 
@@ -257,6 +289,9 @@ The converse of (I) of Ch.~0 \S4 (p.~136) with its printed hypotheses ($W$ possi
 principal, zero allowed).
 \inputleanmodule{Hironaka.Compat.LocallyPrincipalConverse}
 
+\section{Equi-multiplicity, the theorem of B.~Levi--Zariski, Questions (D) and (D$^*$) (Ch.~0 \S4)}
+\inputleanmodule{Hironaka.Ch0.EquimultiplicityQuestions}
+
 \section{Normal crossings (Ch.~0 \S5, Definition 2)}
 \inputleannode{def:0.2-normal-crossings-with-at}
 \inputleannode{def:0.2-normal-crossings-at}
@@ -265,6 +300,9 @@ principal, zero allowed).
 
 \section{Openness of the normal crossing locus (Ch.~0 \S5; Ch.~IV \S1, Lemma~1)}
 \inputleanmodule{Hironaka.Ch0.NormalCrossingsOpen}
+
+\section{Local uniformization and the Zariski space (Ch.~0 \S6, algebraic case)}
+\inputleanmodule{Hironaka.Ch0.ZariskiSpace}
 
 \chapter{Chapter I: an inductive formulation of resolution problems}
 
@@ -329,6 +367,10 @@ the content of Chapters~II--IV, are stated in the next section.
 \inputleannode{thm:I.2-I1-minus-one}
 \inputleannode{thm:I.2-I2-minus-one}
 \inputleannode{lem:I.2-trivial-I-minus-one}
+
+\section{Comments on the fundamental theorems: Theorem III$_N$ and Main Theorem III$(N,n)$ (\S4, pp.~177--180)}
+\inputleanmodule{Hironaka.Ch1.Comments}
+\inputleanmodule{Hironaka.Ch1.CommentsProofs}
 
 \chapter{Chapter II: normal flatness along subschemes}
 
